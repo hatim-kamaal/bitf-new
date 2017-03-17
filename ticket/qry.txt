@@ -1,0 +1,68 @@
+CREATE TABLE BITF_TICKET_USER (
+itsid int(8) NOT NULL PRIMARY KEY, 
+fullname varchar(250) NOT NULL, 
+email varchar(250), 
+mobile varchar(12), 
+secretcode varchar(50), 
+created timestamp DEFAULT CURRENT_TIMESTAMP, 
+updated timestamp
+);
+
+INSERT INTO BITF_TICKET_USER (itsid,fullname,email,mobile,secretcode,updated) VALUES (30359589,'Hatim Bhai Kamaal','hatim.kamaal@gmail.com','8390403052','Passw0rd', now());
+
+CREATE TABLE BITF_TICKET_REQUEST (
+id bigint AUTO_INCREMENT NOT NULL PRIMARY KEY,
+name varchar(250) NOT NULL, 
+email varchar(250), 
+mobile varchar(12), 
+remarks varchar(500),
+status boolean DEFAULT TRUE,
+created timestamp DEFAULT CURRENT_TIMESTAMP, 
+updated timestamp
+);
+
+INSERT INTO BITF_TICKET_REQUEST (name,email,mobile,remarks,updated) VALUES ('Hatim Bhai Kamaal','hatim.kamaal@gmail.com','8390403052','Test Remarks', now());
+
+
+CREATE TABLE BITF_TICKET_DETAILS (
+id bigint AUTO_INCREMENT NOT NULL PRIMARY KEY,
+student_itsid int(8) NOT NULL, 
+student_name varchar(250) NOT NULL, 
+father_name varchar(250) NOT NULL, 
+mother_name varchar(250) NOT NULL, 
+mohalla varchar(20),
+address varchar(500),
+email varchar(250), 
+mobile varchar(12), 
+school_name varchar(250), 
+class_standard varchar(20), 
+exam_board varchar(50), 
+madarsa varchar(200), 
+payment_cycle varchar(50), 
+required_fees varchar(20), 
+own_share varchar(20), 
+required_share varchar(20), 
+father_occupation varchar(250), 
+mother_occupation varchar(250), 
+applied_elsewhere varchar(250), 
+remarks text,
+created timestamp DEFAULT CURRENT_TIMESTAMP, 
+updated timestamp
+);
+
+CREATE TABLE BITF_TICKET_UPDATE_HISTORY (
+id bigint AUTO_INCREMENT NOT NULL PRIMARY KEY,
+ticket_id bigint NOT NULL,
+remarks text NOT NULL,
+created timestamp DEFAULT CURRENT_TIMESTAMP 
+);
+
+
+
+
+-----------------------------------
+CREATE TABLE bitf_txn_reference(id bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, diwas date NOT NULL, txnref varchar(600) NOT NULL, withdraw DECIMAL(13,2) NOT NULL,deposit DECIMAL(13,2) NOT NULL,balance DECIMAL(13,2), bankname varchar(50), itsid int(8), receipt varchar(3));
+
+CREATE TABLE bitf_contributor ( itsid int(8) NOT NULL PRIMARY KEY, fullname varchar(250) NOT NULL, email varchar(250), mobile varchar(12), added timestamp DEFAULT CURRENT_TIMESTAMP, updated timestamp);
+
+CREATE TABLE bitf_donation ( id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT, itsid int(8), txnref varchar(400), amount int, txndate date, added timestamp DEFAULT CURRENT_TIMESTAMP, updated timestamp);

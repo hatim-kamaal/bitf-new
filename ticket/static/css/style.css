@@ -1,0 +1,12 @@
+body {
+	background: url(../img/bg-repx.jpg) repeat-xy 0 0;
+	//background: url(../img/bg1.jpg) no-repeat center center fixed;
+	//background: #6e6e6e;
+	padding: 30px;
+	font-family: 'Lato', sans-serif;
+}
+
+div.shadow {
+    box-shadow: 10px 10px 5px #888888;
+    border: 5px solid green;
+}
