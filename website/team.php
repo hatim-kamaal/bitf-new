@@ -3,9 +3,12 @@ include_once "header.php";
 ?>
 			<div class="panel panel-info">
 			<div class="panel-heading">
-				<h1 class="panel-title">How Can You Help</h1>
+				<h1>Team</h1>
 			</div>
 			<div class="panel-body">
+			<img class="img-responsive center-block"
+						src="static/img/team-help-01-1.png">
+						<br/>
 				<p style="text-align: justify;">Burhani IT Fraternity (BITF) works on a basis of a no-profit no-loss organization, working towards defining a dream, assist them with information, guidance and resources, and motivate them to visualize and achieve that dream.</p>
 <p style="text-align: justify;">We accept donations from one and all members of the Dawoodi Bohra community, to be deposited directly into the account of BITF. A unit is defined as an amount of Rs. 300/- per month. We encourage a commitment of 1 year, payable every month.</p>
 <p style="text-align: justify;">All payments made to the organization will be legal (no cash) and the organization is committed to providing you a receipt for all payments big or small. All banking transactions are traceable and are governed as per policies of the trust of Anjuman-E-Taheri.</p>

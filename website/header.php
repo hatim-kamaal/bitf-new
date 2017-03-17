@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="static/css/style.css">
 <script src="static/js/jquery-3.1.1.min.js"></script>
 <script src="static/js/bootstrap.min.3.3.7.js"></script>
+<script src="static/js/jquery.validate.min.1.9.js"></script>
 
 <style type="text/css">
 </style>
@@ -32,7 +33,7 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="index.php">Home</a></li>
-						<li><a href="whoarewe.php">Who are we?</a></li>
+						<li><a href="help.php">How can you help</a></li>
 						<li><a href="team.php">Team</a></li>
 						<li><a href="contact.php">Contact</a></li>
 					</ul>
