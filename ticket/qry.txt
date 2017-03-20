@@ -1,27 +1,58 @@
 CREATE TABLE BITF_TICKET_USER (
-itsid int(8) NOT NULL PRIMARY KEY, 
-fullname varchar(250) NOT NULL, 
-email varchar(250), 
-mobile varchar(12), 
-secretcode varchar(50), 
-created timestamp DEFAULT CURRENT_TIMESTAMP, 
-updated timestamp
+ITS_ID int(8) NOT NULL PRIMARY KEY, 
+FULL_NAME varchar(250) NOT NULL, 
+EMAIL varchar(250), 
+MOBILE varchar(12), 
+PASSCODE varchar(50), 
+CREATED timestamp DEFAULT CURRENT_TIMESTAMP, 
+UPDATED timestamp
 );
 
-INSERT INTO BITF_TICKET_USER (itsid,fullname,email,mobile,secretcode,updated) VALUES (30359589,'Hatim Bhai Kamaal','hatim.kamaal@gmail.com','8390403052','Passw0rd', now());
+INSERT INTO BITF_TICKET_USER (ITS_ID,FULL_NAME,EMAIL,MOBILE,PASSCODE,UPDATED) VALUES (30359589,'Hatim Bhai Kamaal','hatim.kamaal@gmail.com','8390403052','Passw0rd', now());
 
 CREATE TABLE BITF_TICKET_REQUEST (
+ID bigint AUTO_INCREMENT NOT NULL PRIMARY KEY,
+NAME varchar(250) NOT NULL, 
+EMAIL varchar(250), 
+MOBILE varchar(12), 
+REMARKS varchar(500),
+STATUS boolean DEFAULT TRUE,
+CREATED timestamp DEFAULT CURRENT_TIMESTAMP, 
+UPDATED timestamp
+);
+
+INSERT INTO BITF_TICKET_REQUEST (NAME,EMAIL,MOBILE,REMARKS,UPDATED) VALUES ('Hatim Bhai Kamaal','hatim.kamaal@gmail.com','8390403052','Test Remarks', now());
+
+CREATE TABLE BITF_TICKET_DEPARTMENT (
+ID bigint AUTO_INCREMENT NOT NULL PRIMARY KEY,
+NAME varchar(50) NOT NULL, 
+CREATED timestamp DEFAULT CURRENT_TIMESTAMP, 
+UPDATED timestamp
+);
+
+INSERT INTO BITF_TICKET_DEPARTMENT (NAME, UPDATED) VALUES ('Screening' , now());
+INSERT INTO BITF_TICKET_DEPARTMENT (NAME, UPDATED) VALUES ('Finance' , now());
+INSERT INTO BITF_TICKET_DEPARTMENT (NAME, UPDATED) VALUES ('Core' , now());
+INSERT INTO BITF_TICKET_DEPARTMENT (NAME, UPDATED) VALUES ('Feedback' , now());
+
+
+CREATE TABLE BITF_TICKET_STUDENT (
 id bigint AUTO_INCREMENT NOT NULL PRIMARY KEY,
-name varchar(250) NOT NULL, 
+student_itsid int(8) NOT NULL, 
+father_itsid int(8) NOT NULL, 
+mother_itsid int(8) NOT NULL, 
+student_name varchar(250) NOT NULL, 
+father_name varchar(250) NOT NULL, 
+mother_name varchar(250) NOT NULL, 
+father_occupation varchar(250), 
+mother_occupation varchar(250), 
 email varchar(250), 
 mobile varchar(12), 
-remarks varchar(500),
-status boolean DEFAULT TRUE,
 created timestamp DEFAULT CURRENT_TIMESTAMP, 
 updated timestamp
 );
 
-INSERT INTO BITF_TICKET_REQUEST (name,email,mobile,remarks,updated) VALUES ('Hatim Bhai Kamaal','hatim.kamaal@gmail.com','8390403052','Test Remarks', now());
+
 
 
 CREATE TABLE BITF_TICKET_DETAILS (
@@ -66,3 +97,32 @@ CREATE TABLE bitf_txn_reference(id bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, d
 CREATE TABLE bitf_contributor ( itsid int(8) NOT NULL PRIMARY KEY, fullname varchar(250) NOT NULL, email varchar(250), mobile varchar(12), added timestamp DEFAULT CURRENT_TIMESTAMP, updated timestamp);
 
 CREATE TABLE bitf_donation ( id bigint NOT NULL PRIMARY KEY AUTO_INCREMENT, itsid int(8), txnref varchar(400), amount int, txndate date, added timestamp DEFAULT CURRENT_TIMESTAMP, updated timestamp);
+
+
+
+DROP TABLE	wpms_commentmeta;
+DROP TABLE	wpms_comments;
+DROP TABLE	wpms_links;
+DROP TABLE	wpms_loginizer_logs;
+DROP TABLE	wpms_masterslider_options;
+DROP TABLE	wpms_masterslider_sliders;
+DROP TABLE	wpms_nf_objectmeta;
+DROP TABLE	wpms_nf_objects;
+DROP TABLE	wpms_nf_relationships;
+DROP TABLE	wpms_ninja_forms_fav_fields;
+DROP TABLE	wpms_ninja_forms_fields;
+DROP TABLE	wpms_options;
+DROP TABLE	wpms_popover_ip_cache;
+DROP TABLE	wpms_postmeta;
+DROP TABLE	wpms_posts;
+DROP TABLE	wpms_term_relationships;
+DROP TABLE	wpms_term_taxonomy;
+DROP TABLE	wpms_termmeta;
+DROP TABLE	wpms_terms;
+DROP TABLE	wpms_usermeta;
+DROP TABLE	wpms_users;
+
+
+
+
+DROP TABLE	wpms_commentmeta,wpms_comments,wpms_links,wpms_loginizer_logs,wpms_masterslider_options,wpms_masterslider_sliders,	wpms_nf_objectmeta,	wpms_nf_objects,	wpms_nf_relationships,	wpms_ninja_forms_fav_fields,	wpms_ninja_forms_fields,	wpms_options,	wpms_popover_ip_cache,	wpms_postmeta,wpms_posts,	wpms_term_relationships,	wpms_term_taxonomy,	wpms_termmeta,	wpms_terms,	wpms_usermeta,	wpms_users;

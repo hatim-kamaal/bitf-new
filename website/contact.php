@@ -94,7 +94,6 @@ include_once "header.php";
 					<strong>Success!</strong>
 					<?php echo $msg; ?>
 				</div>
-
 				<?php } ?>
 				<form id="register-form" role="form" action="" method="post">
 					<div class="form-group">
@@ -125,7 +124,6 @@ include_once "header.php";
 				</form>
 			</div>
 		</div>
-
 	</div>
 </div>
 
